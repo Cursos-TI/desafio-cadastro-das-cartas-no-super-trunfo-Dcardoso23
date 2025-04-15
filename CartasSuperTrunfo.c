@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
@@ -7,16 +7,31 @@
 //Teste larissa
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+   char estado[30];
+   char codigo[5];
+   char nomeCidade[50];
+   int populacao;
+   float area;
+   float pib;
+   int pontosTuristicos;
+
+   char estado2[30];
+   char codigo2[5];
+   char nomeCidade2[50];
+   int populacao2;
+   float area2;
+   float pib2;
+   int pontosTuristicos2;
+
+   printf("Super trunfo - Paises: \n");
+   printf("Cadastro de cartas: \n");
+
+   printf("Digite um estado (ex: sao paulo): ");
+   fgets(estado, sizeof(estado), stdin); // sizeof define o tamanho maximo a ser lido
+   estado[strcspn(estado, "\n")] = '\0'; // stdin indica que a entrada vem do teclado
+   // O fgets mantém o caractere \n no final da string
+   // strcspn(estado, "\n") retorna a posição do primeiro \n na string
+   // o strcspn localiza o \n sua posição em seguida e o estado[...] = '\0'; substitui o \n pelo \0
 
     return 0;
 }
