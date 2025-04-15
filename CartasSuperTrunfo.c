@@ -23,15 +23,35 @@ int main() {
    float pib2;
    int pontosTuristicos2;
 
-   printf("Super trunfo - Paises: \n");
-   printf("Cadastro de cartas: \n");
+   printf("Super Trunfo - Paises: \n");
+   printf("Cadastro de Carta: \n");
 
-   printf("Digite um estado (ex: sao paulo): ");
+   printf("Digite um Estado (ex: Sao paulo): ");
    fgets(estado, sizeof(estado), stdin); // sizeof define o tamanho maximo a ser lido
    estado[strcspn(estado, "\n")] = '\0'; // stdin indica que a entrada vem do teclado
    // O fgets mantém o caractere \n no final da string
    // strcspn(estado, "\n") retorna a posição do primeiro \n na string
-   // o strcspn localiza o \n sua posição em seguida e o estado[...] = '\0'; substitui o \n pelo \0
+   // o strcspn localiza o \n sua posição em seguida e o estado[...] = '\0'; substitui o \n pelo \0 que indica o fim da string
+
+   printf("Digite o Codigo da Carta (ex: A1): ");
+   fgets(codigo, sizeof(codigo), stdin); // sizeof define o tamanho maximo a ser lido
+   codigo[strcspn(codigo, "\n")] = '\0';
+
+   printf("Digite o Nome da Cidade (ex: Campinas): ");
+   fgets(nomeCidade, sizeof(nomeCidade), stdin);
+   nomeCidade[strcspn(nomeCidade, "\n")] = '\0';
+
+   printf("Digite a População: ");
+   scanf("%d", &populacao);
+
+   printf("Area: (em km2): ");
+   scanf("%f", &area);
+   
+   printf("PIB (em bilhoes): ");
+   scanf("%f", &pib);
+
+   printf("Digite Numeros de Pontos Turisticos: ");
+   scanf("%d", &pontosTuristicos);
 
     return 0;
 }
